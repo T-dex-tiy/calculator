@@ -1,4 +1,4 @@
-
+console.log("is this hooked up?")
 function onload(){
 
   function add(num1, num2){
@@ -27,12 +27,15 @@ function onload(){
   }
   }
 
+function equals(arr,cb){}
 
-let display=
-   let btn = document.querySelector("button.number");
-    btn.addEventListener('click', function(){
-     number = btn.value
-     console.log (number);
+
+
+
+//let display=
+let btn = document.getElementById("one");
+btn.addEventListener('click', function(){
+     console.log(btn.value);
     });
 
 
