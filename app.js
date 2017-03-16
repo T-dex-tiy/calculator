@@ -1,4 +1,5 @@
 function onLoad(){
+  //This is running well. Refactor if needed/ever figure out a better way
   console.log("is this hooked up?")
   var display =[]
   var buttons =
@@ -12,27 +13,19 @@ function onLoad(){
 
     });
    }
-  //  console.log(buttons);
-  //  return buttons;
-  //
-  // function math(){
+  //PLACING THIS FOR HOLDING UNTIL VAR DISTRUBUTION AFTER CLICK OF MATH FUNCTION
+  // function place(){
   // if () {
   //  var num1 =push.display;
   //  else{
   //    var num2 =push.display;
-  //  }
 
-
-      // console.log(num1);
-  //  // use this area to use button returns to display in input box. use getElementById="calc-dsplay" and insert value
-  //
-  //
   // var array = array.push(button);
   // console.log(buttons)
 
 
 
-
+// Left funcitons up here for figuring out placement
 //   function addNum(num1, num2){
 //     var sum = (num1+num2);
 //     console.log(sum);
@@ -78,7 +71,7 @@ function onLoad(){
 }
 window.onload = onLoad;
 
-
+//Math checked out.
 function addNum(num1, num2){
   var sum = (num1+num2);
   console.log(sum);
@@ -105,14 +98,14 @@ function divdNum(num1, num2){
 }}
 
 function equalAns(arr,cb){
-  return (cb(arr[0], arr[1]))();
+  return (cb(arr[0], arr[1]))();// This caused a nightmare in debugger and could not put together how to have call back run over multiple times.
 
  }
 //
 //
 //
 //
-const arr = [10, 5];
+const arr = [10, 5];// Used for testing. Could not get to pass full arragement and left for testing purposes
 const addsAns = equalAns(arr, addNum);
 console.log("Answer is", addsAns);
 const subsAns = equalAns(arr, subNum);
@@ -121,3 +114,4 @@ const multsAns = equalAns(arr, multNum);
 console.log("Answer is", multsAns);
 const divdsAns = equalAns(arr,divdNum);
 console.log("Answer is", divdsAns);
+// Attempt to get my call backs working, would work for one only. Usually addition which would show on the console
