@@ -4,26 +4,28 @@
     <meta charset="utf-8">
     <title>Calculator</title>
     <link rel="stylesheet" href="./main.css">
-    <link rel="stylesheet" href="/bolierplate
+    <link rel="stylesheet" href="./bolierplate
     .css">
   </head>
 
   <body>
 
-    <input id="calc-display" type="text" name="" value="">
+    <div class="calcbox">
+      <p id="calc-display"></p>
+    </div>
     <hr>
     <button id="one" type="button" class= "digit number" name="button" value="1" onclick="">1</button>
     <button id ="two" type="button" class= "digit number" name="button" value="2" onclick="">2</button>
     <button id="three" type="button" class= "digit number" name="button" value="3" onclick="">3</button>
-    <button id="plus" type="button" class= "math number" name="button" onclick="">+</button>
+    <button id="plus" type="button" class= "math number" name="button" onclick="functionaddNum">+</button>
     <button id ="four" type="button" class= "digit number" name="button" value="4" onclick="">4</button>
     <button id="five" type="button" class= "digit number" name="button" value="5" onclick="">5</button>
     <button id= "six" type="button" class= "digit number" name="button" value="6" onclick="">6</button>
-    <button id= "minus" type="button" class= "math number" name="button" onclick="">-</button>
+    <button id= "minus" type="button" class= "math number" name="button" onclick="functionsubNum()">-</button>
     <button id= "seven" type="button" class= "digit number" name="button" value="7" onclick="">7</button>
     <button id =  "eight" type="button" class= "digit number" name="button" value="8" onclick="">8</button>
     <button id= "nine" type="button" class= "digit number" name="button" value="9" onclick="">9</button>
-    <button id="times" type="button" class= "math number" name="button" onclick="">*</button>
+    <button id="times" type="button" class= "math number" name="button" onclick="funcitonmultNum">*</button>
     <button id ="zero" type="button" class= "digit number" name="button" value="0" onclick="">0</button>
     <button id= "equal" type="button" class= "math number" name="button" onclick="">=</button>
     <button id="modulou" type="button" class= "math number" name="button" onclick="">modulo</button>
