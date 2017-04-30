@@ -3,31 +3,46 @@ function onLoad(){
   console.log("is this hooked up?")
 
   var guiDisplay = []
-  var display =[]
-  var buttons =
-   document.querySelectorAll('button');
-   for (let item of buttons){
+  var maths = []
+  var display = ""
+  var digits =
+   document.querySelectorAll('button.digit');
+   for (let item of digits){
          item.addEventListener("click", function () {
          document.getElementById('calc-display').innerHTML=item.value;
+         display += item.value;
          console.log(display);
-        display.push(item.value);
-
-        console.log(item.value);
-
-        document.getElementById('calc-display').innerHTML=display.join('');
-
-        display = [item.value];
-        guiDisplay.push(display);
+        document.getElementById('calc-display').innerHTML=display;
         console.log('display', display);
-        checkDisplay();
-
+        updateDisplay();
     return display
     });
    }
+   var mathFunc =
+    document.querySelectorAll('button.math');
+    for (let item of mathFunc){
+          item.addEventListener("click", function () {
+          document.getElementById('calc-display').innerHTML=item.value;
+          display += "" + item.value + "";
+          console.log(display);
+         document.getElementById('calc-display').innerHTML=display;
+         console.log('display', display);
+         updateDisplay();
+     return display
+     });
+    }
+// var equalButton = document.querySelectorAll('button.equal');
+//
+//     item.addEventListener("click", function(){
+//       equalAns();
+//     })};
 
+
+
+// Possibly need to add another button that will be tied to math functions only. That would allow for multiple digit math
 function updateDisplay(){
 
-  console.log('oustide:',display, guiDisplay);
+  console.log('oustide:',display);
 }
 // var num1=display[0];
 // var num2=display[2];
@@ -60,6 +75,12 @@ function updateDisplay(){
 //     console.log(divd);
 //     return divd;
 //   }}
+//
+// function equalAns(){
+//   displayAns = guiDisplay.split[];
+//   console.log(displayAns)
+// }
+
 //
 //  var mathFunc = {x} ;
 //  var num1 = 2;
