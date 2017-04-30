@@ -100,6 +100,7 @@ var answerDigits =
         display = runMathsFunc(num1, num2, whyNoWorky);
         console.log(runMathsFunc(num1, num2, whyNoWorky));
       }
+      document.getElementById('calc-display').innerHTML=display;
 
 
   return display
