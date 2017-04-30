@@ -57,7 +57,12 @@ function onLoad(){
     var divd=(num1/num2);
     console.log(divd);
     return divd;
-  }}
+  }
+}
+function whyNoWorky(num1, num2){
+  var modulo=(num1%num2);
+  return modulo
+}
 
 
 
@@ -90,6 +95,12 @@ var answerDigits =
         display = runMathsFunc(num1, num2, divdNum);
         console.log(runMathsFunc(num1, num2, divdNum));
       }
+      if (maths[1]=== '%'){
+        runMathsFunc(num1, num2, whyNoWorky);
+        display = runMathsFunc(num1, num2, whyNoWorky);
+        console.log(runMathsFunc(num1, num2, whyNoWorky));
+      }
+
 
   return display
   });
