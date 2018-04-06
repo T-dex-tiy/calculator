@@ -1,3 +1,4 @@
+
 function onLoad(){
   //This is running well. Refactor if needed/ever figure out a better way
   console.log("is this hooked up?")
@@ -27,7 +28,6 @@ function onLoad(){
           console.log(display);
          document.getElementById('calc-display').innerHTML=display;
          console.log('display', display);
-
      return display
      });
     }
@@ -106,7 +106,7 @@ var answerDigits =
   return display
   });
  }
-// This code does work but I am havign issues with pulling multiple numbers and using them in the same function. Will need to revisit this and update to optimize
+// This code does work but I am having issues with pulling multiple numbers and using them in the same function. Will need to revisit this and update to optimize
  function runMathsFunc(num1, num2, cb){
    return cb(num1, num2)
    console.log(cb(num1, num2));
