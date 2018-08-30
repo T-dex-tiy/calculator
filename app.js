@@ -5,27 +5,37 @@ function onLoad(){
 
   var guiDisplay = []
   var maths = []
-  var display = ""
+  var display=""
+  var num1=[]
+  var num2=[]
+  var mem=[]
   var digits =
    document.querySelectorAll('button.digit');
    for (let item of digits){
          item.addEventListener("click", function () {
          document.getElementById('calc-display').innerHTML=item.value;
          display += item.value;
-         console.log(display);
         document.getElementById('calc-display').innerHTML=display;
         console.log('display', display);
-
     return display
     });
+    
+    
    }
+   
    var mathFunc =
     document.querySelectorAll('button.math');
     for (let item of mathFunc){
           item.addEventListener("click", function () {
           document.getElementById('calc-display').innerHTML=item.value;
-          display += "" + item.value + "";
-          console.log(display);
+          if (num1.length==0){
+            num1.push(display)
+            display=""
+          }
+          console.log(num1, num2);
+          maths.push(item.value)
+          console.log(maths);
+          
          document.getElementById('calc-display').innerHTML=display;
          console.log('display', display);
      return display
@@ -70,46 +80,44 @@ var answerDigits =
  document.querySelectorAll('button.equal');
  for (let item of answerDigits){
        item.addEventListener("click", function () {
-      maths = display.split('');
-      let num1 = parseFloat(maths[0]);
-      let num2 = parseFloat(maths[2]);
-      let mathFunc= maths[1];
-      console.log("nun1", num1 ,"num2", num2, "mathFuncs", mathFunc);
-      if (maths[1]=== '+'){
-        runMathsFunc(num1, num2, addNum);
-        display = runMathsFunc(num1, num2, addNum);
-        console.log(runMathsFunc(num1, num2, addNum));
+      num2.push(display)
+      let number1 = parseFloat(num1[0]);
+      let number2 = parseFloat(num2[0]);
+      let mathFunc= maths[0].toString();
+      console.log("nun1", number1 ,"num2", number2, "mathFuncs", mathFunc);
+      if (mathFunc=== '+'){
+        runMathsFunc(number1, number2, addNum);
+        display = runMathsFunc(number1, number2, addNum);
       }
-      if (maths[1]=== '-'){
-        runMathsFunc(num1, num2, subNum);
-        display = runMathsFunc(num1, num2, subNum);
-        console.log(runMathsFunc(num1, num2, subNum));
+      if (mathFunc=== '-'){
+        runMathsFunc(number1, number2, subNum);
+        display = runMathsFunc(number1, number2, subNum);
       }
-      if (maths[1]=== 'x'){
-        runMathsFunc(num1, num2, multNum);
-        display = runMathsFunc(num1, num2, multNum);
-        console.log(runMathsFunc(num1, num2, multNum));
+      if (mathFunc=== 'x'){
+        runMathsFunc(number1, number2, multNum);
+        display = runMathsFunc(number1, number2, multNum);
       }
-      if (maths[1]=== '/'){
-        runMathsFunc(num1, num2, divdNum);
-        display = runMathsFunc(num1, num2, divdNum);
-        console.log(runMathsFunc(num1, num2, divdNum));
+      if (mathFunc=== '/'){
+        runMathsFunc(number1, number2, divdNum);
+        display = runMathsFunc(number1, number2, divdNum);
       }
-      if (maths[1]=== '%'){
-        runMathsFunc(num1, num2, whyNoWorky);
-        display = runMathsFunc(num1, num2, whyNoWorky);
-        console.log(runMathsFunc(num1, num2, whyNoWorky));
+      if (mathFunc=== '%'){
+        runMathsFunc(number1, number2, whyNoWorky);
+        display = runMathsFunc(number1, number2, whyNoWorky);
       }
       document.getElementById('calc-display').innerHTML=display;
-
+      num1=[]
+      maths=[]
+      num1.push(display)
+      
+      console.log(num1, display);
+      
 
   return display
   });
  }
-// This code does work but I am having issues with pulling multiple numbers and using them in the same function. Will need to revisit this and update to optimize
  function runMathsFunc(num1, num2, cb){
    return cb(num1, num2)
-   console.log(cb(num1, num2));
  }
 
 }

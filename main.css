@@ -10,20 +10,24 @@ body{
   width: 65%;
   background-color: blue;
 }
-.calcbox{
-  display: flex;
-  justify-content: center;
+.input{
+  background-color:grey;
+  margin:.25em;
 }
-#calc-display{
+
+.calc-display{
   width:95%;
   height: 1em;
   border-radius:10px;
-  border: 5px solid grey;
-  margin-bottom:10px;
+  border: 5px solid black;
+  padding:0;
+  margin:0;
   text-align: center;
   align-content: center;
   font-size: 3em;
-  background-color: white;
+}
+#calc-display{
+  padding-bottom: 1em;
 }
 .inputButtons{
   display: grid;
