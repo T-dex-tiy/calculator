@@ -37,6 +37,7 @@ function onLoad(){
           console.log(maths);
           
          document.getElementById('calc-display').innerHTML=display;
+         
          console.log('display', display);
      return display
      });
@@ -107,9 +108,10 @@ var answerDigits =
       }
       document.getElementById('calc-display').innerHTML=display;
       num1=[]
+      num2=[]
       maths=[]
       num1.push(display)
-      
+      display=""
       console.log(num1, display);
       
 
