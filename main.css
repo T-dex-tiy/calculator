@@ -17,7 +17,7 @@ body{
 
 .calc-display{
   width:95%;
-  height: 1em;
+  height: 1.3em;
   border-radius:10px;
   border: 5px solid black;
   padding:0;
@@ -29,6 +29,7 @@ body{
 #calc-display{
   padding-bottom: 1em;
 }
+
 .inputButtons{
   display: grid;
   grid-template-columns: repeat(3, minmax(500px, 1fr));
