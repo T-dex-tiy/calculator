@@ -2,23 +2,26 @@
 function onLoad(){
   //This is running well. Refactor if needed/ever figure out a better way
 
-  var guiDisplay = []
+
   var maths = []
   var display=""
   var num1=[]
   var num2=[]
   var top=[]
   var digits =
-   document.querySelectorAll('button.digit');
+   document.querySelectorAll('button.digit')
    for (let item of digits){
          item.addEventListener("click", function () {
-         document.getElementById('calc-display').innerHTML=item.value;
+        console.log(display);
+           
+         const dis=document.getElementById('calc-display').innerHTML=item.value;
+         console.log(display, dis)
          display += item.value;
          let newDisplay=num1 +" "+ maths
         document.getElementById('function').innerHTML=top
         document.getElementById('calc-display').innerHTML=display;
         document.getElementById('function').innerHTML=newDisplay
-        console.log('display', display);
+        console.log('display', {dis, display} );
     return display
     });
     
@@ -82,6 +85,16 @@ function whyNoWorky(num1, num2){
   return modulo
 }
 
+var clear= document.querySelector('.clear')
+clear.addEventListener('click', function(){
+  console.log(display, num1, num2, maths);
+  maths = []
+  display=""
+  num1=[]
+  num2=[]
+  document.getElementById('calc-display').innerHTML=display;
+  document.getElementById('function').innerHTML=display;
+})
 
 
 var answerDigits =
