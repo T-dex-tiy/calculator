@@ -4,6 +4,9 @@ function onLoad(){
 
 
   var maths = []
+  var secertEgg=[]
+  var checkEgg="80085"
+  var number1=[]
   var display=""
   var num1=[]
   var num2=[]
@@ -11,17 +14,13 @@ function onLoad(){
   var digits =
    document.querySelectorAll('button.digit')
    for (let item of digits){
-         item.addEventListener("click", function () {
-        console.log(display);
-           
+         item.addEventListener("click", function () {  
          const dis=document.getElementById('calc-display').innerHTML=item.value;
-         console.log(display, dis)
          display += item.value;
          let newDisplay=num1 +" "+ maths
         document.getElementById('function').innerHTML=top
         document.getElementById('calc-display').innerHTML=display;
         document.getElementById('function').innerHTML=newDisplay
-        console.log('display', {dis, display} );
     return display
     });
     
@@ -34,9 +33,7 @@ function onLoad(){
           document.getElementById('calc-display').innerHTML=item.value;
           if (num1.length==0){
             num1.push(display)
-            top.concat(num1)
-            console.log(top);
-            
+            top.concat(num1)    
             display=""
           }
           
@@ -44,11 +41,9 @@ function onLoad(){
             return null
           }else{
           maths.push(item.value)}
-          console.log(maths);
          document.getElementById('calc-display').innerHTML=display;
          let newDisplay= num1+' '+ maths
          document.getElementById('function').innerHTML=newDisplay
-         console.log('display', newDisplay);
      return display
      });
     }
@@ -57,26 +52,22 @@ function onLoad(){
 // Left funcitons up here for figuring out placement
   function addNum(num1, num2){
     var sum = (num1+num2);
-    console.log(sum);
     return sum;
   }
   function subNum(num1, num2){
     var sub =(num1-num2);
-    console.log(sub);
     return sub;
   }
   function multNum(num1,num2){
     var mult =(num1*num2);
-    console.log(mult);
     return mult;
   }
   function divdNum(num1, num2){
-    if (num2 === 0){
-      console.log('error')
+    if (num2 == 0){
+      alert("You trying to kill us all? No one can divide by Zero!!!")
     }
     else{
     var divd=(num1/num2);
-    console.log(divd);
     return divd;
   }
 }
@@ -87,7 +78,6 @@ function whyNoWorky(num1, num2){
 
 var clear= document.querySelector('.clear')
 clear.addEventListener('click', function(){
-  console.log(display, num1, num2, maths);
   maths = []
   display=""
   num1=[]
@@ -107,7 +97,6 @@ var answerDigits =
       let number1 = parseFloat(num1[0]);
       let number2 = parseFloat(num2[0]);
       let mathFunc= maths[0].toString();
-      console.log("nun1", number1 ,"num2", number2, "mathFuncs", mathFunc);
       if (mathFunc=== '+'){
         runMathsFunc(number1, number2, addNum);
         display = runMathsFunc(number1, number2, addNum);
@@ -138,7 +127,6 @@ var answerDigits =
       num1.push(display)
 
       display=""
-      console.log(num1, display);
       
 
   return display
@@ -147,6 +135,21 @@ var answerDigits =
  function runMathsFunc(num1, num2, cb){
    return cb(num1, num2)
  }
+ var easterEgg=document.addEventListener('click', (e)=>{
+  secertEgg.push(e.target.value)
+  secertEgg.splice(-checkEgg.length - 1, secertEgg.length - checkEgg.length)
+  number1.push(num1.toString())
+  number1.splice(-checkEgg.length -1, number1.length - checkEgg.length)
+  
+  
+  if(secertEgg.join('').includes(checkEgg)||number1.join('').includes(checkEgg)){
+    console.log("You fifth grader");
+    document.getElementById('calc-display').innerHTML="You Fifth Grader..."
+    number1=[]
+  }
+   
+ })
+ 
 
 }
 window.onload = onLoad;
